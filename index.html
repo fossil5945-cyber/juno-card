@@ -144,8 +144,10 @@ h1{font-size:clamp(42px,13.2vw,56px);line-height:1.02;font-weight:700;letter-spa
 
 /* ---------- QR modal ---------- */
 .modal{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:16px;padding:24px;background:rgba(6,8,11,.92);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .2s}
-.modal.open{opacity:1;pointer-events:auto}
+  gap:16px;padding:24px;background:rgba(6,8,11,.92);backdrop-filter:blur(10px);
+  opacity:0;pointer-events:none;visibility:hidden;overflow-y:auto;overscroll-behavior:contain;
+  transition:opacity .2s,visibility .2s}
+.modal.open{opacity:1;pointer-events:auto;visibility:visible}
 .modal .mtile{background:#fff;border-radius:14px;padding:16px;width:min(84vw,380px);box-shadow:0 24px 70px -20px rgba(0,0,0,.9)}
 .modal .mtile img{display:block;width:100%;height:auto;image-rendering:pixelated}
 .modal .mcap{text-align:center;color:#DDE3E9;font-size:14px;font-weight:600}
@@ -309,7 +311,7 @@ h1{font-size:clamp(42px,13.2vw,56px);line-height:1.02;font-weight:700;letter-spa
 
 <div class="toast" id="toast" role="status" aria-live="polite"><span class="dot"></span><span id="toastText"></span></div>
 
-<div class="modal" id="qrModal" role="dialog" aria-modal="true" aria-label="QR 코드 크게 보기">
+<div class="modal" id="qrModal" role="dialog" aria-modal="true" aria-label="QR 코드 크게 보기" aria-hidden="true">
   <div class="mtile"><img id="qrModalImg" src="qr-contact.svg" alt=""></div>
   <div class="mcap"><span id="qrModalTitle">연락처 저장</span><span class="msub" id="qrModalSub"></span></div>
   <button class="mclose" type="button" id="qrModalClose">닫기</button>
@@ -386,14 +388,25 @@ h1{font-size:clamp(42px,13.2vw,56px);line-height:1.02;font-weight:700;letter-spa
   var modalImg = document.getElementById("qrModalImg");
   var modalTitle = document.getElementById("qrModalTitle");
   var modalSub = document.getElementById("qrModalSub");
+  var lastFocus = null;
   function openQr(btn){
+    lastFocus = btn;
     modalImg.src = btn.getAttribute("data-qr");
     modalImg.alt = btn.getAttribute("data-qr-title") + " QR 코드";
     modalTitle.textContent = btn.getAttribute("data-qr-title");
     modalSub.textContent = btn.getAttribute("data-qr-sub");
     modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(function(){ document.getElementById("qrModalClose").focus(); });
   }
-  function closeQr(){ modal.classList.remove("open"); }
+  function closeQr(){
+    if (!modal.classList.contains("open")) return;
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
   document.querySelectorAll("[data-qr]").forEach(function(btn){
     btn.addEventListener("click", function(){ openQr(btn); });
   });
