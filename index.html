@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>김준호 · JUNO commerce | 디지털 명함</title>
+<meta name="description" content="JUNO commerce 대표 김준호의 디지털 명함. 연락처 저장, 전화, 이메일, Pickle @aistudio.">
+<meta name="theme-color" content="#0A0D12">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="김준호 · JUNO commerce">
+<meta property="og:description" content="대표 · CEO | JUNO commerce — JUNO studio · JUNO story · JUNO Ai center">
+<meta property="og:url" content="https://fossil5945-cyber.github.io/juno-card/">
+<meta property="og:image" content="https://fossil5945-cyber.github.io/juno-card/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0D12'/%3E%3Crect x='8' y='8' width='16' height='16' fill='%234EE8CD'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Pretendard";src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+
+:root{
+  --bg:#0A0D12;
+  --ink:#F2F5F7;
+  --sec:#A3ABB7;
+  --muted:#6B7481;
+  --mint:#4EE8CD;
+  --hair:rgba(255,255,255,.09);
+  --hair2:rgba(255,255,255,.055);
+  --panel:rgba(255,255,255,.022);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  font-size:15px;
+  line-height:1.5;
+  letter-spacing:-0.01em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  min-height:100%;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:28px 28px;
+  -webkit-mask-image:radial-gradient(120% 80% at 50% 0%,#000 35%,transparent 88%);
+  mask-image:radial-gradient(120% 80% at 50% 0%,#000 35%,transparent 88%);
+  opacity:.9;
+}
+body::after{
+  content:"";position:fixed;left:0;right:0;top:0;height:420px;z-index:0;pointer-events:none;
+  background:radial-gradient(70% 100% at 50% -10%,rgba(78,232,205,.13),rgba(78,232,205,0) 70%);
+}
+.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:20px 20px calc(36px + env(safe-area-inset-bottom))}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+
+/* ---------- top bar ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--hair)}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px;letter-spacing:-0.02em}
+.brand .sq{width:7px;height:7px;background:var(--mint);display:inline-block;margin-top:-2px}
+.tag{font-size:9px;font-weight:500;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+
+/* ---------- hero ---------- */
+.hero{padding:26px 0 22px}
+.eyebrow{font-size:9.5px;font-weight:600;letter-spacing:.26em;color:var(--mint);text-transform:uppercase}
+.rule{width:38px;height:2px;background:var(--mint);margin:18px 0 14px;opacity:.95}
+h1{font-size:clamp(42px,13.2vw,56px);line-height:1.02;font-weight:700;letter-spacing:-0.045em;margin:0}
+.latin{margin:9px 0 0;font-size:16px;font-weight:500;color:var(--sec);letter-spacing:.01em}
+.role{margin:14px 0 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.role .pos{font-size:14px;font-weight:600;color:var(--mint)}
+.role .co{font-size:13px;color:var(--muted);letter-spacing:.01em}
+.role .dot{width:3px;height:3px;border-radius:50%;background:var(--muted);opacity:.7}
+
+/* ---------- affiliates ---------- */
+.affs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair2);border-bottom:1px solid var(--hair2);margin:2px 0 4px}
+.aff{padding:13px 10px 15px;position:relative}
+.aff+.aff{border-left:1px solid var(--hair2)}
+.aff .no{font-size:9px;font-weight:600;letter-spacing:.14em;color:var(--mint);opacity:.85}
+.aff .nm{margin-top:5px;font-size:11.5px;font-weight:500;color:#DEE3E8;line-height:1.25;letter-spacing:-0.01em}
+.blk::before{content:"계열사";position:absolute;left:0;top:-14px}
+
+.section-label{
+  display:flex;align-items:center;gap:8px;
+  font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+  margin:30px 0 10px;
+}
+.section-label::after{content:"";flex:1;height:1px;background:var(--hair2)}
+
+/* ---------- contact panel ---------- */
+.panel{background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:2px 16px}
+.row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--hair2)}
+.row:last-child{border-bottom:0}
+.row-main{min-width:0;flex:1}
+.label{display:block;font-size:8.5px;font-weight:600;letter-spacing:.2em;color:var(--muted);margin-bottom:3px}
+.value{display:block;font-size:15px;font-weight:600;letter-spacing:-0.005em;color:var(--ink);word-break:break-all}
+.value.mint{color:var(--mint)}
+.hint{display:block;font-size:11.5px;color:var(--muted);margin-top:2px;font-weight:400}
+.icon-btn{
+  flex:none;width:36px;height:36px;display:grid;place-items:center;border-radius:10px;
+  border:1px solid var(--hair);color:var(--sec);transition:color .18s,border-color .18s,background .18s;
+}
+.icon-btn:hover,.icon-btn:focus-visible{color:var(--mint);border-color:rgba(78,232,205,.4);background:rgba(78,232,205,.06);outline:none}
+.icon-btn:active{transform:scale(.96)}
+
+/* ---------- actions ---------- */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;min-height:52px;padding:0 16px;border-radius:12px;
+  font-size:14px;font-weight:600;letter-spacing:-0.01em;
+  transition:transform .15s,background .2s,border-color .2s,box-shadow .2s;
+  text-align:center;
+}
+.btn svg{flex:none}
+.btn.primary{
+  min-height:54px;background:var(--mint);color:#04120F;font-weight:700;font-size:15px;
+  box-shadow:0 6px 22px -10px rgba(78,232,205,.7),0 0 0 1px rgba(78,232,205,.25) inset;
+}
+.btn.primary:hover{background:#63F0D8}
+.btn.primary:active{transform:scale(.985);box-shadow:0 2px 10px -8px rgba(78,232,205,.7)}
+.btn.ghost{background:rgba(255,255,255,.03);border:1px solid var(--hair)}
+.btn.ghost:hover{background:rgba(78,232,205,.07);border-color:rgba(78,232,205,.35)}
+.btn.ghost:active{transform:scale(.985)}
+.btn.ghost .ico{color:var(--mint)}
+.actions{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.save-note{margin:8px 0 0;font-size:11px;color:var(--muted);text-align:center}
+.save-note a{color:var(--sec);text-decoration:underline;text-decoration-color:rgba(255,255,255,.25);text-underline-offset:2px}
+
+/* ---------- qr ---------- */
+.qr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2px}
+.qr-card{border:1px solid var(--hair);border-radius:14px;padding:12px 12px 13px;background:var(--panel);text-align:center}
+.qr-tile{background:#fff;border-radius:8px;padding:9px;display:block;width:100%;border:0;cursor:zoom-in;transition:transform .18s}
+.qr-tile:active{transform:scale(.985)}
+.qr-tile img{display:block;width:100%;height:auto;image-rendering:pixelated}
+.qr-zoom-hint{margin-top:7px;font-size:9.5px;color:#5B636E;letter-spacing:.02em}
+
+/* ---------- QR modal ---------- */
+.modal{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;padding:24px;background:rgba(6,8,11,.92);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .2s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal .mtile{background:#fff;border-radius:14px;padding:16px;width:min(84vw,380px);box-shadow:0 24px 70px -20px rgba(0,0,0,.9)}
+.modal .mtile img{display:block;width:100%;height:auto;image-rendering:pixelated}
+.modal .mcap{text-align:center;color:#DDE3E9;font-size:14px;font-weight:600}
+.modal .msub{display:block;margin-top:5px;font-size:11px;font-weight:400;color:var(--muted)}
+.modal .mclose{margin-top:4px;border:1px solid var(--hair);border-radius:999px;padding:9px 22px;font-size:13px;color:var(--sec)}
+.modal .mclose:hover{color:var(--mint);border-color:rgba(78,232,205,.4)}
+.qr-cap{margin-top:10px;font-size:12px;font-weight:600;color:var(--ink);letter-spacing:-0.01em}
+.qr-sub{margin-top:3px;font-size:8.5px;font-weight:600;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.qr-card .pickle-id{display:inline-flex;align-items:center;gap:5px;margin-top:6px;font-size:11px;font-weight:600;color:var(--mint)}
+
+/* ---------- footer ---------- */
+.foot{margin-top:34px;padding-top:16px;border-top:1px solid var(--hair2)}
+.foot .co{font-size:12.5px;font-weight:600;color:#D5DBE1}
+.foot .sub{margin-top:4px;font-size:11px;color:var(--muted);letter-spacing:.01em}
+.foot .meta{margin-top:14px;display:flex;justify-content:space-between;gap:10px;font-size:9px;letter-spacing:.14em;color:#4C545E;text-transform:uppercase}
+.link-btn{color:#6B7481;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.link-btn:hover{color:var(--mint)}
+
+/* ---------- toast ---------- */
+.toast{
+  position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));transform:translate(-50%,14px);
+  z-index:20;display:flex;align-items:center;gap:8px;
+  background:rgba(16,21,27,.96);border:1px solid rgba(78,232,205,.35);color:#EAF2F1;
+  padding:10px 16px;border-radius:999px;font-size:12.5px;font-weight:500;
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.9);
+  opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
+  backdrop-filter:blur(8px);white-space:nowrap;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast .dot{width:6px;height:6px;border-radius:50%;background:var(--mint)}
+
+/* ---------- motion ---------- */
+.reveal{opacity:0;transform:translateY(10px);animation:rise .6s cubic-bezier(.22,.7,.3,1) forwards}
+.d1{animation-delay:.04s}.d2{animation-delay:.1s}.d3{animation-delay:.16s}.d4{animation-delay:.22s}.d5{animation-delay:.28s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}.toast{transition:none}}
+
+/* ---------- wider screens ---------- */
+@media (min-width:560px){
+  .wrap{padding:34px 26px 44px}
+  .value{font-size:15.5px}
+  .aff .nm{font-size:12.5px}
+}
+@media (max-width:340px){
+  .aff .nm{font-size:10.5px}
+  .btn{font-size:13px;gap:6px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="top reveal">
+    <div class="brand"><span class="sq"></span>JUNO commerce</div>
+    <div class="tag">Mother company</div>
+  </header>
+
+  <section class="hero reveal d1">
+    <div class="eyebrow">Business card</div>
+    <div class="rule"></div>
+    <h1>김준호</h1>
+    <p class="latin">Kim Joonho</p>
+    <p class="role"><span class="pos">대표 · CEO</span><span class="dot"></span><span class="co">JUNO commerce</span></p>
+  </section>
+
+  <section class="affs reveal d2" aria-label="계열사">
+    <div class="aff"><div class="no">01</div><div class="nm">JUNO studio</div></div>
+    <div class="aff"><div class="no">02</div><div class="nm">JUNO story</div></div>
+    <div class="aff"><div class="no">03</div><div class="nm">JUNO Ai center</div></div>
+  </section>
+
+  <div class="section-label reveal d2">Contact</div>
+  <section class="panel reveal d3" aria-label="연락처 정보">
+    <div class="row">
+      <div class="row-main">
+        <span class="label">TEL</span>
+        <a class="value" href="tel:+821085271151">+82 10-8527-1151</a>
+        <span class="hint">010-8527-1151</span>
+      </div>
+      <button class="icon-btn" type="button" data-copy="+821085271151" data-done="전화번호를 복사했습니다" aria-label="전화번호 복사">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H6a2 2 0 0 0-2 2v6.5A2.5 2.5 0 0 0 6.5 14"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <div class="row-main">
+        <span class="label">EMAIL</span>
+        <a class="value" href="mailto:fossil5945@gmail.com">fossil5945@gmail.com</a>
+      </div>
+      <button class="icon-btn" type="button" data-copy="fossil5945@gmail.com" data-done="이메일 주소를 복사했습니다" aria-label="이메일 주소 복사">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H6a2 2 0 0 0-2 2v6.5A2.5 2.5 0 0 0 6.5 14"/></svg>
+      </button>
+    </div>
+    <div class="row">
+      <div class="row-main">
+        <span class="label">Pickle ID</span>
+        <a class="value mint" href="pickle://user?user_id=user-live-26efd6b1-ed90-4e84-a5c5-840d3641540d">@aistudio</a>
+        <span class="hint">피클 앱에서 1:1 대화</span>
+      </div>
+      <button class="icon-btn" type="button" data-copy="@aistudio" data-done="Pickle ID @aistudio 를 복사했습니다" aria-label="Pickle 아이디 복사">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3H6a2 2 0 0 0-2 2v6.5A2.5 2.5 0 0 0 6.5 14"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <div class="section-label reveal d3">One tap</div>
+  <section class="actions reveal d4" aria-label="바로 연결">
+    <a class="btn primary" id="saveContact" href="juno.vcf">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11"/><path d="M7.5 10.5 12 15l4.5-4.5"/><path d="M4.5 17.5v1.5a1.5 1.5 0 0 0 1.5 1.5h12a1.5 1.5 0 0 0 1.5-1.5v-1.5"/></svg>
+      연락처 저장
+    </a>
+    <p class="save-note">연락처 앱이 바로 열리지 않으면 <a href="juno.vcf" download="김준호-JUNO-commerce.vcf">vCard 파일 받기</a></p>
+    <div class="grid2">
+      <a class="btn ghost" href="tel:+821085271151">
+        <svg class="ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 3.8h2.2l1.6 4-2 1.3a11 11 0 0 0 6.5 6.5l1.3-2 4 1.6v2.2a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 6a2 2 0 0 1 2-2.2Z"/></svg>
+        전화 걸기
+      </a>
+      <a class="btn ghost" href="mailto:fossil5945@gmail.com">
+        <svg class="ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.4"/><path d="m3.8 7 8.2 6 8.2-6"/></svg>
+        이메일 보내기
+      </a>
+      <a class="btn ghost" href="pickle://user?user_id=user-live-26efd6b1-ed90-4e84-a5c5-840d3641540d">
+        <svg class="ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.3-6M20 12a8 8 0 0 1-13.3 6"/><path d="M17.5 2.6V6h-3.4M6.5 21.4V18h3.4"/></svg>
+        피클 연결
+      </a>
+      <button class="btn ghost" type="button" id="shareBtn">
+        <svg class="ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15.5V4"/><path d="M8 7.5 12 3.6l4 3.9"/><path d="M5 13v6.4A1.6 1.6 0 0 0 6.6 21h10.8a1.6 1.6 0 0 0 1.6-1.6V13"/></svg>
+        명함 링크
+      </button>
+    </div>
+  </section>
+
+  <div class="section-label reveal d4">Scan</div>
+  <section class="qr-grid reveal d5" aria-label="QR 코드">
+    <div class="qr-card">
+      <button class="qr-tile" type="button" data-qr="qr-contact.svg" data-qr-title="연락처 저장" data-qr-sub="카메라로 스캔하면 연락처에 바로 추가됩니다" aria-label="연락처 저장 QR 코드 크게 보기">
+        <img src="qr-contact.svg" width="320" height="320" alt="연락처 저장 QR 코드">
+      </button>
+      <div class="qr-cap">연락처 저장</div>
+      <div class="qr-sub">Scan · vCard</div>
+      <div class="qr-zoom-hint">탭해서 크게</div>
+    </div>
+    <div class="qr-card">
+      <button class="qr-tile" type="button" data-qr="qr-pickle.svg" data-qr-title="Pickle @aistudio" data-qr-sub="피클 앱 카메라로 스캔하면 대화가 열립니다" aria-label="Pickle QR 코드 크게 보기">
+        <img src="qr-pickle.svg" width="320" height="320" alt="Pickle @aistudio QR 코드">
+      </button>
+      <div class="qr-cap">Pickle</div>
+      <div class="qr-sub">Scan · 앱에서 열기</div>
+      <button class="pickle-id" type="button" data-copy="@aistudio" data-done="Pickle ID @aistudio 를 복사했습니다">@aistudio · 복사</button>
+    </div>
+  </section>
+
+  <footer class="foot reveal d5">
+    <div class="co">JUNO commerce</div>
+    <div class="sub">JUNO studio · JUNO story · JUNO Ai center</div>
+    <div class="meta">
+      <span>Digital card</span>
+      <button class="link-btn" type="button" id="copyUrl">링크 복사</button>
+    </div>
+  </footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span class="dot"></span><span id="toastText"></span></div>
+
+<div class="modal" id="qrModal" role="dialog" aria-modal="true" aria-label="QR 코드 크게 보기">
+  <div class="mtile"><img id="qrModalImg" src="qr-contact.svg" alt=""></div>
+  <div class="mcap"><span id="qrModalTitle">연락처 저장</span><span class="msub" id="qrModalSub"></span></div>
+  <button class="mclose" type="button" id="qrModalClose">닫기</button>
+</div>
+
+<script>
+(function(){
+  var CARD_URL = "https://fossil5945-cyber.github.io/juno-card/";
+  var toastEl = document.getElementById("toast");
+  var toastText = document.getElementById("toastText");
+  var timer = null;
+
+  function toast(msg){
+    toastText.textContent = msg;
+    toastEl.classList.add("show");
+    clearTimeout(timer);
+    timer = setTimeout(function(){ toastEl.classList.remove("show"); }, 2200);
+  }
+
+  function legacyCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly","");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch(e){ ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copy(text, doneMsg){
+    if (navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){
+        toast(doneMsg);
+      }).catch(function(){
+        toast(legacyCopy(text) ? doneMsg : "복사하지 못했습니다. 길게 눌러 직접 복사해 주세요.");
+      });
+    } else {
+      toast(legacyCopy(text) ? doneMsg : "복사하지 못했습니다. 길게 눌러 직접 복사해 주세요.");
+    }
+  }
+
+  document.querySelectorAll("[data-copy]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      copy(btn.getAttribute("data-copy"), btn.getAttribute("data-done") || "복사했습니다");
+    });
+  });
+
+  var shareBtn = document.getElementById("shareBtn");
+  shareBtn.addEventListener("click", function(){
+    var data = {
+      title: "김준호 · JUNO commerce",
+      text: "JUNO commerce 대표 김준호 명함",
+      url: CARD_URL
+    };
+    if (navigator.share){
+      navigator.share(data).catch(function(){ /* 사용자가 취소한 경우 */ });
+    } else {
+      copy(CARD_URL, "명함 링크를 복사했습니다");
+    }
+  });
+
+  document.getElementById("copyUrl").addEventListener("click", function(){
+    copy(CARD_URL, "명함 링크를 복사했습니다");
+  });
+
+  // QR 크게 보기
+  var modal = document.getElementById("qrModal");
+  var modalImg = document.getElementById("qrModalImg");
+  var modalTitle = document.getElementById("qrModalTitle");
+  var modalSub = document.getElementById("qrModalSub");
+  function openQr(btn){
+    modalImg.src = btn.getAttribute("data-qr");
+    modalImg.alt = btn.getAttribute("data-qr-title") + " QR 코드";
+    modalTitle.textContent = btn.getAttribute("data-qr-title");
+    modalSub.textContent = btn.getAttribute("data-qr-sub");
+    modal.classList.add("open");
+  }
+  function closeQr(){ modal.classList.remove("open"); }
+  document.querySelectorAll("[data-qr]").forEach(function(btn){
+    btn.addEventListener("click", function(){ openQr(btn); });
+  });
+  document.getElementById("qrModalClose").addEventListener("click", closeQr);
+  modal.addEventListener("click", function(e){ if (e.target === modal) closeQr(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeQr(); });
+
+  // 연락처 저장: 모바일에서 vCard가 새 창에 열려 연락처 앱으로 넘어가도록 둔다.
+  document.getElementById("saveContact").addEventListener("click", function(){
+    toast("연락처 앱에서 추가를 눌러 주세요");
+  });
+})();
+</script>
+</body>
+</html>
